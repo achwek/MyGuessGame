@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Guess Game</string>
+    <string name="initEditText">0</string>
+    <string name="time">25:00</string>
+    <string name="tentative">20</string>
+    <string name="Historique"><u><b>Historique</b></u></string>
+    <string name="txtSplash">WELCOME</string>
+    <string name="etName">   <u><b>Your Name</b></u>   </string>
+    <string name="MsgName">  <u><b>Enter Your Name</b></u>  </string>
+    <string name="MsgGo">  <u><b> GUESS THE NUMBER </b></u>  </string>
+    <string name="btnStart">  <b>START GAME</b></string>
+    <string name="btnValider">  <b>Valider</b></string>
+    <string name="tvScore">  <b><u>Score</u></b></string>
+    <string name="Score">  <b>00</b></string>
+    <string name="easy">  <b><i><u>E</u> </i></b>ASY</string>
+    <string name="hard">  <b><i><u>H</u> </i></b>ARD</string>
+    <string name="textBest">  <b><i><u>BEST SCORE</u> </i></b></string>
+    <string name="tvText">I am thinking of a number Between 1-1000\n
+                "Can you Guess it \n</string>
+
+</resources>
