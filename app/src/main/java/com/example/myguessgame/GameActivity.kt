@@ -1,18 +1,22 @@
 package com.example.myguessgame
 
 
+import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlin.random.Random
 
 class GameActivity : AppCompatActivity() {
 
+    internal  var helper= DatabaseHoelper(this)
+
+    var list = mutableListOf<Gamer>()
     private  lateinit var tVScore: TextView
 
     private var nbEssais : Int=0
@@ -121,6 +125,7 @@ class GameActivity : AppCompatActivity() {
 
     }
 
+    @SuppressLint("SuspiciousIndentation")
     private fun gameGood(m: String) {
         editText.setFocusable(false)
 
@@ -130,10 +135,22 @@ class GameActivity : AppCompatActivity() {
         timer?.cancel()
         textViewHistory.text = msg
         getScore()
-     val d= Intent(this,ScoreActivity::class.java)
-        d.putExtra("SCORE",score)
-        startActivity(d)
-        finish()
+        viewAll()
+        if(list.size >= 0 && list.size < 10){
+            intentScore()
+
+        }else{
+            if(firstGamer(score)){
+                intentScore()
+
+            }
+
+        }
+
+
+
+
+
 
     }
 
@@ -183,12 +200,13 @@ class GameActivity : AppCompatActivity() {
 
     }
     private fun reset(){
+
+        editText.setFocusable(true)
+        imageButtonCheck.setClickable(true)
         msg=""
         random= Random.nextInt(1, 1000)
         editText.text.clear()
         resetTimer()
-        imageButtonCheck.setClickable(true)
-        editText.setFocusable(true)
         textViewHistory.text=""
         tVScore.text="00"
 
@@ -240,6 +258,39 @@ class GameActivity : AppCompatActivity() {
         score= score - (nbEssais + nbSecondesPassees)
         tVScore.text = score.toString()
 
+    }
+
+    fun viewAll(){
+        list.clear()
+        val res=helper.allData
+        if(res.count == 0){
+            Toast.makeText(this, "No records", Toast.LENGTH_SHORT).show()
+
+        }
+        while (res.moveToNext()){
+            list.add(Gamer(res.getString(0),
+                res.getString(1),
+                res.getString(2)))
+
+        }
+    }
+
+    private fun intentScore() {
+        val d = Intent(this, ScoreActivity::class.java)
+        d.putExtra("SCORE", score)
+        startActivity(d)
+        finish()
+    }
+
+    fun  firstGamer(s : Int): Boolean{
+        var p : Boolean = false
+            for ( gamer in list ){
+            if(Integer.parseInt(gamer.score) <= s){
+                p= true
+            }
+        }
+
+    return p
     }
 
 }

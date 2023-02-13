@@ -11,7 +11,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="350dp"
-        android:layout_margin="10dp"
+        android:layout_margin="30dp"
         android:background="@drawable/logolaunch">
 
     </LinearLayout>
@@ -21,8 +21,8 @@
 
     <RadioGroup
         android:id="@+id/rgN"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         >
 
@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/easy"
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:textColor="@color/black"
             android:checked="true"
             android:buttonTint="@color/purple_500"
@@ -41,19 +41,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/hard"
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:textColor="@color/black"
             android:buttonTint="@color/purple_500"/>
     </RadioGroup>
 
     <Button
         android:id="@+id/btnStartGame"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:layout_margin="10dp"
+        android:layout_margin="20dp"
         android:text="@string/btnStart"
         android:textColor="@color/black"
+        android:textSize="20dp"
         android:background="@color/purple_fl"/>
 
 </LinearLayout>

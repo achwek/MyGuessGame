@@ -28,7 +28,7 @@
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:backgroundTint="@color/white"
-                android:tint="@color/purple_600"
+                android:tint="#009688"
                 app:srcCompat="@drawable/refresh_24"
                 tools:ignore="UseAppTint,SpeakableTextPresentCheck" />
 
@@ -37,7 +37,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="15dp"
-                android:tint="@color/purple_600"
+                android:tint="#009688"
                 app:srcCompat="@drawable/alarm_24"
                 tools:ignore="UseAppTint" />
 

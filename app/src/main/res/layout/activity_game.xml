@@ -31,7 +31,7 @@
                 android:layout_height="match_parent"
                 android:backgroundTint="@color/white"
                 app:srcCompat="@drawable/refresh_24"
-                android:tint="@color/purple_600"
+                android:tint="#009688"
                 tools:ignore="UseAppTint,SpeakableTextPresentCheck" />
 
             <ImageView
@@ -40,7 +40,7 @@
                 android:layout_height="50dp"
                 app:srcCompat="@drawable/alarm_24"
                 android:layout_margin="15dp"
-                android:tint="@color/purple_600"
+                android:tint="#009688"
                 tools:ignore="UseAppTint" />
             <TextView
                 android:id="@+id/tvTimer"

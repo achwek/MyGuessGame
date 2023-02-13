@@ -12,7 +12,9 @@ import android.widget.Toast
 import kotlin.random.Random
 
 class GameHardActivity : AppCompatActivity() {
+    internal  var helper= DatabaseHoelperHard(this)
 
+    var list = mutableListOf<Gamer>()
     private  lateinit var tVScore: TextView
 
      var nbEssais : Int=0
@@ -70,13 +72,13 @@ class GameHardActivity : AppCompatActivity() {
 
                         Toast.makeText(applicationContext,nbEssais.toString(), Toast.LENGTH_LONG).show()
 
-                        if(number< random){
+                        if(number < random){
                             textViewMessage.text="Wrong, your number is to low!"
 
                             editText.text.clear();
 
 
-                        }else if(number> random){
+                        }else if(number > random){
                             textViewMessage.text="Wrong, your number is to high!"
                             editText.text.clear()
 
@@ -121,11 +123,17 @@ class GameHardActivity : AppCompatActivity() {
         timer?.cancel()
 
         affScore()
-        val i = Intent(this,ScoreActivity::class.java)
-        i.putExtra("SCORE",score)
-        startActivity(i)
-        finish()
+        viewAll()
+        if(list.size >= 0 && list.size < 10){
+            intentScore()
 
+        }else{
+            if(firstGamer(score)){
+                intentScore()
+
+            }
+
+        }
 
     }
 
@@ -234,5 +242,37 @@ class GameHardActivity : AppCompatActivity() {
 
 
 
+    }
+    fun viewAll(){
+        list.clear()
+        val res=helper.allData
+        if(res.count == 0){
+            Toast.makeText(this, "No records", Toast.LENGTH_SHORT).show()
+
+        }
+        while (res.moveToNext()){
+            list.add(Gamer(res.getString(0),
+                res.getString(1),
+                res.getString(2)))
+
+        }
+    }
+
+    private fun intentScore() {
+        val d = Intent(this@GameHardActivity, HardScoreActivity::class.java)
+        d.putExtra("SCORE", score)
+        startActivity(d)
+        finish()
+    }
+
+    fun  firstGamer(s : Int): Boolean{
+        var p : Boolean = false
+        for ( gamer in list ){
+            if(Integer.parseInt(gamer.score) <= s){
+                p= true
+            }
+        }
+
+        return p
     }
 }

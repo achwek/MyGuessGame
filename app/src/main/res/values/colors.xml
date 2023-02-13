@@ -13,4 +13,6 @@
     <color name="blue">#3F58EA</color>
     <color name="purple_fl">#36BB86FC</color>
     <drawable name="colorSplash">#86FFFFFF</drawable>
+    <color name="teal">#6B018786</color>
+
 </resources>

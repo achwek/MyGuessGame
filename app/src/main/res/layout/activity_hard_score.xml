@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/purple_fl"
-    tools:context=".ScoreActivity">
+    tools:context=".HardScoreActivity">
+
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -23,23 +24,24 @@
         app:backgroundTint="#009688"
         />
 
+
     <ImageView
-        android:id="@+id/imgCongratulations"
+        android:id="@+id/imgCong"
         android:layout_width="match_parent"
         android:layout_height="140dp"
         android:layout_gravity="center"
-        app:srcCompat="@drawable/congratulations" />
+        app:srcCompat="@drawable/hardimage" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:text="@string/MsgName"
-        android:textColor="@color/pink"
         android:textSize="20dp"
-        android:layout_margin="20dp"/>
-
+        android:textColor="@color/pink"
+        android:gravity="center"
+        android:layout_margin="20dp"
+        />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
