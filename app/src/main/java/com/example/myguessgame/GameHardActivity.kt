@@ -70,7 +70,7 @@ class GameHardActivity : AppCompatActivity() {
                         textViewEssais.text= nbE.toString()
 
 
-                        Toast.makeText(applicationContext,nbEssais.toString(), Toast.LENGTH_LONG).show()
+                       // Toast.makeText(applicationContext,nbEssais.toString(), Toast.LENGTH_LONG).show()
 
                         if(number < random){
                             textViewMessage.text="Wrong, your number is to low!"
@@ -128,7 +128,7 @@ class GameHardActivity : AppCompatActivity() {
             intentScore()
 
         }else{
-            if(firstGamer(score)){
+            if(gamerbetween(score)){
                 intentScore()
 
             }
@@ -265,7 +265,7 @@ class GameHardActivity : AppCompatActivity() {
         finish()
     }
 
-    fun  firstGamer(s : Int): Boolean{
+    fun  gamerbetween(s : Int): Boolean{
         var p : Boolean = false
         for ( gamer in list ){
             if(Integer.parseInt(gamer.score) <= s){

@@ -25,11 +25,11 @@ class MainActivity : AppCompatActivity() {
             val rbId= rgN.checkedRadioButtonId
             val rbcheked= findViewById<RadioButton>(rbId)
             if(rbcheked.equals(rbEasy)){
-                Toast.makeText(applicationContext,rbcheked.text.toString(), Toast.LENGTH_LONG).show()
+              //  Toast.makeText(applicationContext,rbcheked.text.toString(), Toast.LENGTH_LONG).show()
                 val intentGameActivity: Intent = Intent(this,GameActivity::class.java)
                 startActivity(intentGameActivity)
             }else if(rbcheked.equals(rbHard)){
-                Toast.makeText(applicationContext,rbcheked.text.toString(), Toast.LENGTH_LONG).show()
+               // Toast.makeText(applicationContext,rbcheked.text.toString(), Toast.LENGTH_LONG).show()
                 val intentGameActivity: Intent = Intent(this,GameHardActivity::class.java)
                 startActivity(intentGameActivity)
             }
